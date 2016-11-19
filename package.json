@@ -14,7 +14,7 @@
   "author": "David Merrick",
   "repository": {
     "type": "git",
-    "url": "https://github.com/davidmerrick/trimet-api-nodejs"
+    "url": "https://github.com/davidmerrick/trimet-api-client"
   },
   "license": "ISC",
   "dependencies": {
