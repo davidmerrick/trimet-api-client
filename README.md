@@ -1,5 +1,7 @@
 API wrapper for TriMet, written in Node. Note: This is a work-in-progress. Will be uploading it as an official NPM package soon.
 
+NPM package: https://www.npmjs.com/package/trimet-api-client
+
 ## Usage
 
 var TriMetAPI = require('trimet-api');
