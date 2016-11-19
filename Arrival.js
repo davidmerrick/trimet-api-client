@@ -1,3 +1,13 @@
+var ArrivalType = require('./ArrivalType');
+
+var maxLines = [
+    "blue",
+    "red",
+    "orange",
+    "green",
+    "yellow"
+];
+
 var Arrival = function(arrivalData){
     this.departed = arrivalData.departed;
     this.scheduled = arrivalData.scheduled;
@@ -12,6 +22,13 @@ var Arrival = function(arrivalData){
     this.block = arrivalData.block;
     this.locid = arrivalData.locid;
     this.status = arrivalData.status;
+
+    var trainSign = this.getTrainSign();
+    if(maxLines.indexOf(trainSign.toLowerCase()) !== -1){
+        this.arrivalType = ArrivalType.MAX_TRAIN;
+    } else {
+        this.arrivalType = ArrivalType.BUS;
+    }
 };
 
 Arrival.prototype.getNextArrivalTime = function(){
@@ -36,5 +53,9 @@ Arrival.prototype.getTrainSign = function(){
 Arrival.prototype.getBusID = function(){
     return this.route;
 };
+
+Arrival.prototype.getArrivalType = function() {
+    return this.arrivalType;
+}
 
 module.exports = Arrival;
