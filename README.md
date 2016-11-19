@@ -3,4 +3,5 @@ API wrapper for TriMet, written in Node. Note: This is a work-in-progress. Will 
 ## Usage
 
 var TriMetAPI = require('trimet-api');
+
 var TriMetAPIInstance = new TriMetAPI(YOUR_TRIMET_API_KEY);
