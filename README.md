@@ -5,3 +5,10 @@ API wrapper for TriMet, written in Node. Note: This is a work-in-progress. Will 
 var TriMetAPI = require('trimet-api');
 
 var TriMetAPIInstance = new TriMetAPI(YOUR_TRIMET_API_KEY);
+
+### Get next arrival for bus at given stop
+
+TriMetAPIInstance.getNextArrivalForBus(stopID, busID, function(arrival){
+    var minutesRemaining = arrival.getMinutesUntilArrival();
+    console.log("Bus " + busID + " arriving in " + minutesRemaining + " min");
+});
