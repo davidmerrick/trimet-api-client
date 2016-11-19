@@ -1,0 +1,19 @@
+{
+  "name": "trimet-api",
+  "version": "1.0.0",
+  "description": "A NodeJS wrapper for interacting with the TriMet API for transit arrival times in Portland, OR.",
+  "main": "TriMetAPI.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "transit",
+    "trimet",
+    "portland"
+  ],
+  "author": "David Merrick",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.79.0"
+  }
+}
