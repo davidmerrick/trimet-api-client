@@ -24,7 +24,11 @@ TriMetAPI.prototype.getTrimetStopUrl = function(stopID){
 TriMetAPI.prototype.getSortedFilteredArrivals = function(stopID, callback){
     var url = this.getTrimetStopUrl(stopID);
     var _this = this;
-    request(url, function(error, response, body){
+    var options = {
+        url: url,
+        withCredentials: false
+    };
+    request(options, function(error, response, body){
         if(!error && response.statusCode == 200) {
             var result = JSON.parse(body);
             var arrivalDatas = result.resultSet.arrival;
