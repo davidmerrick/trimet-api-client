@@ -12,6 +12,10 @@
     "portland"
   ],
   "author": "David Merrick",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidmerrick/trimet-api-nodejs"
+  },
   "license": "ISC",
   "dependencies": {
     "request": "^2.79.0"
