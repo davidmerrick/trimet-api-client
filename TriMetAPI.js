@@ -18,9 +18,7 @@ TriMetAPI.prototype.getNextArrivalForBus = function(stopID, busID, callback){
             return;
         }
         try {
-            var arrivalsForStop = arrivals.filter(function (arrival) {
-                return arrival.route == busID;
-            });
+            var arrivalsForStop = arrivals.filter(arrival => arrival.route == busID);
             var arrivalData = arrivalsForStop[0];
             var arrival = new Arrival(arrivalData);
             callback(null, arrival);
@@ -49,17 +47,11 @@ TriMetAPI.prototype.getSortedFilteredArrivals = function(stopID, callback){
                 callback(new Error("No arrivals found."));
                 return;
             }
-            var arrivals = arrivalDatas.map(function(arrivalData) {
-                return new Arrival(arrivalData);
-            });
+            var arrivals = arrivalDatas.map(arrivalData => new Arrival(arrivalData));
             arrivals = _this.sortArrivals(arrivals);
 
             // Filter for arrivals that have already happened
-            arrivals = arrivals.filter(function (arrival) {
-                var minutesRemaining = arrival.getMinutesUntilArrival();
-                return minutesRemaining > 0;
-            });
-
+            arrivals = arrivals.filter(arrival => arrival.getMinutesUntilArrival() > 0);
             callback(null, arrivals);
         } else {
             callback(new Error(`Error in request to TriMet API. Response: ${response.statusCode}`));
