@@ -1,6 +1,6 @@
-var keyMirror = require('keymirror');
+import keymirror from 'keymirror'
 
-module.exports = keyMirror({
+export default keymirror({
     MAX_TRAIN: null,
     BUS: null
 });

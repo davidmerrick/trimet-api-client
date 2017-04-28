@@ -14,7 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var maxLines = ["blue", "red", "orange", "green", "yellow"];
+var MAX_LINES = ["blue", "red", "orange", "green", "yellow"];
 
 var Arrival = function () {
     function Arrival(arrivalData) {
@@ -35,7 +35,7 @@ var Arrival = function () {
         this.status = arrivalData.status;
 
         var trainSign = this.getTrainSign();
-        if (maxLines.indexOf(trainSign.toLowerCase()) !== -1) {
+        if (MAX_LINES.indexOf(trainSign.toLowerCase()) !== -1) {
             this.arrivalType = _ArrivalType2.default.MAX_TRAIN;
         } else {
             this.arrivalType = _ArrivalType2.default.BUS;

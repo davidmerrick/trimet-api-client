@@ -1,6 +1,6 @@
 import ArrivalType from './ArrivalType'
 
-const maxLines = [
+const MAX_LINES = [
     "blue",
     "red",
     "orange",
@@ -26,7 +26,7 @@ class Arrival {
         this.status = arrivalData.status;
 
         var trainSign = this.getTrainSign();
-        if (maxLines.indexOf(trainSign.toLowerCase()) !== -1) {
+        if (MAX_LINES.indexOf(trainSign.toLowerCase()) !== -1) {
             this.arrivalType = ArrivalType.MAX_TRAIN;
         } else {
             this.arrivalType = ArrivalType.BUS;
@@ -61,4 +61,4 @@ class Arrival {
     }
 }
 
-export default Arrival
+export default Arrival;

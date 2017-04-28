@@ -85,4 +85,4 @@ class TriMetAPI {
     }
 }
 
-export default TriMetAPI
+export default TriMetAPI;
