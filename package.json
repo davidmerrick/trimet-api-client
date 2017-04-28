@@ -4,7 +4,7 @@
   "description": "A NodeJS wrapper for interacting with the TriMet API for transit arrival times in Portland, OR.",
   "main": "TriMetAPI.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/babel-cli/bin/babel-node.js --presets es2015 node_modules/mocha/bin/mocha test/test.babel.js"
   },
   "keywords": [
     "transit",
@@ -20,5 +20,12 @@
   "dependencies": {
     "keymirror": "^0.1.1",
     "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^3.5.0",
+    "expect": "^1.20.2",
+    "mocha": "^3.3.0"
   }
 }
