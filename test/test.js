@@ -18,4 +18,17 @@ describe("TriMetAPI Tests", done => {
                 throw new Error(err);
             });
     });
+
+    it("Test get single arrival", done => {
+        let stopId = 755;
+
+        return TriMetAPIInstance.getSortedFilteredArrivals(stopId)
+            .then(arrivals => {
+                console.log("Success!");
+                done();
+            })
+            .catch(err => {
+                throw new Error(err);
+            });
+    });
 });
