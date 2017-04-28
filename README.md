@@ -14,3 +14,11 @@ TriMetAPIInstance.getNextArrivalForBus(stopID, busID, function(arrival){
     var minutesRemaining = arrival.getMinutesUntilArrival();
     console.log("Bus " + busID + " arriving in " + minutesRemaining + " min");
 });
+
+## Building
+
+To make changes and build them to the "dist" folder, use:
+```
+npm install
+npm run build
+```
