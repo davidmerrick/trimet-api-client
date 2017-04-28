@@ -2,7 +2,7 @@
   "name": "trimet-api-client",
   "version": "2.0.3",
   "description": "A Promise-based TriMet API client for transit arrival times in Portland, OR.",
-  "main": "dist/index.js",
+  "main": "dist/TriMetAPI.js",
   "scripts": {
     "build": "babel src --presets babel-preset-es2015 -d dist",
     "prepublish": "npm run build",

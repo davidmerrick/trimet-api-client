@@ -1,12 +1,5 @@
 import ArrivalType from './ArrivalType'
-
-const MAX_LINES = [
-    "blue",
-    "red",
-    "orange",
-    "green",
-    "yellow"
-];
+import MaxLines from './constants/MaxLines'
 
 class Arrival {
 
@@ -26,7 +19,7 @@ class Arrival {
         this.status = arrivalData.status;
 
         var trainSign = this.getTrainSign();
-        if (MAX_LINES.indexOf(trainSign.toLowerCase()) !== -1) {
+        if (MaxLines.indexOf(trainSign.toLowerCase()) !== -1) {
             this.arrivalType = ArrivalType.MAX_TRAIN;
         } else {
             this.arrivalType = ArrivalType.BUS;

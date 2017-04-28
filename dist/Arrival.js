@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -6,15 +6,17 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _ArrivalType = require("./ArrivalType");
+var _ArrivalType = require('./ArrivalType');
 
 var _ArrivalType2 = _interopRequireDefault(_ArrivalType);
+
+var _MaxLines = require('./constants/MaxLines');
+
+var _MaxLines2 = _interopRequireDefault(_MaxLines);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var MAX_LINES = ["blue", "red", "orange", "green", "yellow"];
 
 var Arrival = function () {
     function Arrival(arrivalData) {
@@ -35,7 +37,7 @@ var Arrival = function () {
         this.status = arrivalData.status;
 
         var trainSign = this.getTrainSign();
-        if (MAX_LINES.indexOf(trainSign.toLowerCase()) !== -1) {
+        if (_MaxLines2.default.indexOf(trainSign.toLowerCase()) !== -1) {
             this.arrivalType = _ArrivalType2.default.MAX_TRAIN;
         } else {
             this.arrivalType = _ArrivalType2.default.BUS;
@@ -43,7 +45,7 @@ var Arrival = function () {
     }
 
     _createClass(Arrival, [{
-        key: "getNextArrivalTime",
+        key: 'getNextArrivalTime',
         value: function getNextArrivalTime() {
             if (this.estimated) {
                 return Date.parse(this.estimated);
@@ -51,7 +53,7 @@ var Arrival = function () {
             return Date.parse(this.scheduled);
         }
     }, {
-        key: "getMinutesUntilArrival",
+        key: 'getMinutesUntilArrival',
         value: function getMinutesUntilArrival() {
             var arrivalTime = this.getNextArrivalTime();
             var now = Date.now();
@@ -60,17 +62,17 @@ var Arrival = function () {
             return diffMins;
         }
     }, {
-        key: "getTrainSign",
+        key: 'getTrainSign',
         value: function getTrainSign() {
             return this.shortSign.split(" ")[0];
         }
     }, {
-        key: "getBusID",
+        key: 'getBusID',
         value: function getBusID() {
             return this.route;
         }
     }, {
-        key: "getArrivalType",
+        key: 'getArrivalType',
         value: function getArrivalType() {
             return this.arrivalType;
         }
