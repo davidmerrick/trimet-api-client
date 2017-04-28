@@ -9,10 +9,13 @@ describe("TriMetAPI Tests", done => {
         let stopId = 755;
         let busId = 20;
 
-        TriMetAPIInstance.getNextArrivalForBus(stopId, busId)
+        return TriMetAPIInstance.getNextArrivalForBus(stopId, busId)
             .then(result => {
                 console.log("Success!");
                 done();
+            })
+            .catch(err => {
+                throw new Error(err);
             });
     });
 });
