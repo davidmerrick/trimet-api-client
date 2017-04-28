@@ -29,7 +29,7 @@ class TriMetAPI {
                     reject(Error(`Error getting arrivals at stop ${stopId} for bus ${busId}`));
                 }
             });
-        }
+        });
     }
 
     getTrimetStopUrl(stopId) {
