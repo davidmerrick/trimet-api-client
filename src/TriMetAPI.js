@@ -39,7 +39,7 @@ class TriMetAPI {
                     let data = response.data;
                     let arrivalDatas = data.resultSet.arrival;
                     if (arrivalDatas == null || arrivalDatas.length === 0) {
-                        callback(new Error("No arrivals found."));
+                        reject(new Error("No arrivals found."));
                         return;
                     }
                     let arrivals = arrivalDatas.map(arrivalData => new Arrival(arrivalData));

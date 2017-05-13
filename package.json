@@ -1,6 +1,6 @@
 {
   "name": "trimet-api-client",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A Promise-based TriMet API client for transit arrival times in Portland, OR.",
   "main": "dist/TriMetAPI.js",
   "scripts": {
